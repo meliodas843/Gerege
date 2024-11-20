@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .qr-container {
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            display: inline-block;
+            background-color: #f9f9f9;
+        }
+        #qrcode {
+            margin: 20px auto;
+        }
+        a {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="qr-container">
+        <h1>Scan the QR Code</h1>
+        <div id="qrcode"></div>
+        <a id="redirect-link" href="https://meliodas843.github.io/LawFrim/" target="_blank">Visit Website</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+    <script>
+        const qrUrl = "https://meliodas843.github.io/LawFrim/";
+        const qrcode = new QRCode(document.getElementById("qrcode"), {
+            text: qrUrl,
+            width: 200,
+            height: 200,
+        });
+        setTimeout(() => {
+            window.location.href = qrUrl; 
+        },20000);
+    </script>
+</body>
+</html>
